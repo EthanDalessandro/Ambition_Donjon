@@ -201,17 +201,15 @@ MonoBehaviour:
   audioArray:
   - {fileID: 3890285613031084017, guid: 82bcf10e45d36b34db7579780b494247, type: 3}
   - {fileID: 1252303323242104375, guid: 93001c854458dc54387dcc3933b30295, type: 3}
-  Weaponnary:
-  - {fileID: 7852110810264942195}
-  - {fileID: 5339062600773408329}
   speed: 4
   sensitivity: 2
   jumpForce: 5
   attackRange: 2.3
-  knockBackForce: 10
+  knockBackForce: 0.5
   damage: 10
   critChance: 50
   critDamage: 100
+  health: 500
   player: {fileID: 851877269577129969}
   direction: {fileID: 851877268176908807}
   raycastJumpPosition: {fileID: 851877269568881323}
@@ -422,10 +420,5 @@ PrefabInstance:
 --- !u!4 &4707380403447287027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1887607449404744313, guid: 3064fb734fd710e43812a9ac1b2f74cc, type: 3}
-  m_PrefabInstance: {fileID: 6584783205977222794}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5339062600773408329 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1259301822776408259, guid: 3064fb734fd710e43812a9ac1b2f74cc, type: 3}
   m_PrefabInstance: {fileID: 6584783205977222794}
   m_PrefabAsset: {fileID: 0}
