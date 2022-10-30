@@ -14,6 +14,8 @@ public class BasicEnemy_Movement : MonoBehaviour
     {
         agentPawn = this.GetComponent<NavMeshAgent>();
         originPosition = transform.position;
+
+        agentPawn.SetDestination(originPosition);
     }
 
     public void OnTriggerStay(Collider other)
@@ -22,7 +24,10 @@ public class BasicEnemy_Movement : MonoBehaviour
 
         if (player)
         {
+            agentPawn.stoppingDistance = 2f;
+
             followSmooth += 1f * Time.deltaTime;
+
             if (followSmooth >= followSmoothCD)
             {
                 followSmooth = 0f;
@@ -37,6 +42,7 @@ public class BasicEnemy_Movement : MonoBehaviour
 
         if (player)
         {
+            agentPawn.stoppingDistance = 0f;
             followSmooth = 0f;
             agentPawn.SetDestination(originPosition);
         }
