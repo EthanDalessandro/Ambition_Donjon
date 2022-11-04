@@ -8,7 +8,7 @@ public class BasicEnemy_Movement : MonoBehaviour
     Vector3 originPosition;
     public NavMeshAgent agentPawn;
     float followSmooth = 0f;
-    public float followSmoothCD = 1f;
+    public float followSmoothCD = 0.5f;
 
     public void Start()
     {
