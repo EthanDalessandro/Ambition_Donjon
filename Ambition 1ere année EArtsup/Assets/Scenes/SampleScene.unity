@@ -424,18 +424,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2274225262583716042, guid: ecff2b23f49410343baaee985363361c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4814367102776532531, guid: ecff2b23f49410343baaee985363361c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5076784347832545739, guid: ecff2b23f49410343baaee985363361c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 5182132752249084704, guid: ecff2b23f49410343baaee985363361c, type: 3}
       propertyPath: _player
       value: 
@@ -487,10 +475,6 @@ PrefabInstance:
     - target: {fileID: 5182132752249084714, guid: ecff2b23f49410343baaee985363361c, type: 3}
       propertyPath: m_Name
       value: Basic_Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5182132752249084714, guid: ecff2b23f49410343baaee985363361c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
