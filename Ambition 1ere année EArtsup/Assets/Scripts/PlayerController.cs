@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -39,17 +37,22 @@ public class PlayerController : MonoBehaviour
         {
             // Debug.Log("YOU DIED LOOSER");
         }
-        movement();
+        Movement();
 
 
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse1)) //Si Clique droit alors...
         {
             RightAttack();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0)) //Si clique gauche alors...
+        {
+            LeftAttack();
         }
     }
 
 
-    void movement()
+    void Movement()
     {
 
         direction.eulerAngles += new Vector3(Input.GetAxis("Mouse Y") * sensitivity * -1, 0, 0); //Je Bouge la camera Verticalement
@@ -88,16 +91,14 @@ public class PlayerController : MonoBehaviour
     void RightAttack()
     {
         Debug.DrawRay(direction.position, direction.forward * attackRange, Color.red); //Dessine un Rayon Rouge qui suit les mouvements de la camera
-
         RaycastHit mouse1_hitObject; //L'objet qui a été toucher par le raycast
-
         Ray mouse1_Ray = new Ray(direction.position, direction.forward); //j'initie le rayon qui vas apparaitre lors du clique droit
 
         if (Physics.Raycast(mouse1_Ray, out mouse1_hitObject, attackRange)) //si le rayon du clique droit touche un object dans la range définie
         {
 
             // Debug.Log(mouse1_hitObject.transform.name + " a été toucher");
-
+            //Si on touche avec le rayon un basic enemy controller alors...
             if (mouse1_hitObject.transform.GetComponent<BasicEnemy_Controller>()) //si l'objet toucher comporte le script basicEnemyController alors...
             {
 
@@ -116,6 +117,25 @@ public class PlayerController : MonoBehaviour
                 }
 
                 mouse1_hitObject.transform.GetComponent<Rigidbody>().AddForceAtPosition(mouse1_Ray.direction * knockBackForce, mouse1_hitObject.transform.position, ForceMode.Impulse); //On pousse le gameObject toucher
+            }
+        }
+    }
+    void LeftAttack()
+    {
+        Debug.DrawRay(direction.position, direction.forward * attackRange, Color.blue);
+        RaycastHit leftClickHitObject;
+        Ray ray = new Ray(direction.position, direction.forward);
+
+        if(Physics.Raycast(ray, out leftClickHitObject, attackRange))
+        {
+            ChestManager chestManager = leftClickHitObject.transform.GetComponent<ChestManager>();
+            if(chestManager)
+            {
+                if(chestManager.isOpen == false)
+                {
+                    chestManager.OpenChest();
+                    print("Vous avez trouvé un coffre !!");
+                }
             }
         }
     }

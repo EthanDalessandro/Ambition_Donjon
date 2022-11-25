@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.AI;
 
 public class BasicEnemy_Controller : MonoBehaviour
@@ -11,7 +9,7 @@ public class BasicEnemy_Controller : MonoBehaviour
     public GameObject _player;
     public TextMesh textName_LV;
     public TextMesh textHealth;
-    public float lv;
+    public float level;
     public float health = 100;
     public float damage = 10f;
     public float attackSpeed = 1f;
@@ -22,12 +20,12 @@ public class BasicEnemy_Controller : MonoBehaviour
     void Start()
     {
         originPosition = new Vector3(transform.position.x, 0, transform.position.z); // je donne la position de l'instantiation comme point de départ de ce gameobject
-        lv = Random.Range(0, 150); // je random le lv du gameobject à l'instantiation
-        health = Random.Range(health, (lv * health / 5)); // les pv du personnages sont définies par ce calcul (qui est un calcul au pif)
+        level = Random.Range(0, 150); // je random le lv du gameobject à l'instantiation
+        health = Random.Range(health, (level * health / 5)); // les pv du personnages sont définies par ce calcul (qui est un calcul au pif)
 
         agentPawn = this.GetComponent<NavMeshAgent>();
 
-        textName_LV.text = transform.name + " LEVEL : " + lv.ToString(); // Le nom du gameobject et son lv sont définie ici
+        textName_LV.text = transform.name + " LEVEL : " + level.ToString(); // Le nom du gameobject et son lv sont définie ici
     }
 
     void Update()
