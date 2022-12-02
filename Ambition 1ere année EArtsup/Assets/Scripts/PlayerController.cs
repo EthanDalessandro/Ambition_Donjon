@@ -24,9 +24,9 @@ public class PlayerController : MonoBehaviour
     public Transform raycastJumpPosition;
     public Rigidbody body;
     bool CanJump = true;
+
     void Start()
     {
-
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -54,7 +54,6 @@ public class PlayerController : MonoBehaviour
 
     void Movement()
     {
-
         direction.eulerAngles += new Vector3(Input.GetAxis("Mouse Y") * sensitivity * -1, 0, 0); //Je Bouge la camera Verticalement
         transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * sensitivity); //Je pivote le player sur l'axe Y pour changer son forward en fonction de la souris
 
