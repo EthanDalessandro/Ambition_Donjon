@@ -4,6 +4,8 @@ using UnityEngine.AI;
 
 public class BasicEnemy_Controller : MonoBehaviour
 {
+    public int minLevel = 0;
+    public int maxLevel = 10;
     Vector3 originPosition;
     NavMeshAgent agentPawn;
     public GameObject _player;
@@ -20,7 +22,7 @@ public class BasicEnemy_Controller : MonoBehaviour
     void Start()
     {
         originPosition = new Vector3(transform.position.x, 0, transform.position.z); // je donne la position de l'instantiation comme point de départ de ce gameobject
-        level = Random.Range(0, 150); // je random le lv du gameobject à l'instantiation
+        level = Random.Range(minLevel, maxLevel); // je random le lv du gameobject à l'instantiation
         health = Random.Range(health, (level * health / 5)); // les pv du personnages sont définies par ce calcul (qui est un calcul au pif)
 
         agentPawn = this.GetComponent<NavMeshAgent>();
@@ -46,6 +48,12 @@ public class BasicEnemy_Controller : MonoBehaviour
         }
 
         textHealth.text = health.ToString(); //? les Pv sont vérifié constamment et mis à jour même si aucun changement, pas opti, on pourrait faire la MaJ à chaque fois qu'il reçois un coup un ou un autre événement, A REVOIR
+
+        //!Autre manière de faire une direction qui bloque sur l'axe Y pour la barre de vie en 3D par exemple
+        // Vector3 direction = _player.transform.position - textName_LV.transform.position;
+        // direction.y = 0;
+        // Quaternion rotation = Quaternion.LookRotation(-direction);
+        // textName_LV.transform.rotation = rotation;
 
         textName_LV.transform.rotation = Quaternion.LookRotation(textName_LV.transform.position - _player.transform.position); //on fait en sort que les text regarde constamment la camera
         textHealth.transform.rotation = Quaternion.LookRotation(textHealth.transform.position - _player.transform.position); //on fait en sort que les text regarde constamment la camera
@@ -76,12 +84,3 @@ public class BasicEnemy_Controller : MonoBehaviour
         }
     }
 }
-
-// if (PlayerList.Count > 0 && Vector3.Distance(transform.position, PlayerList[0].transform.position) >= attackRange) //si un objet s'ajoute dans la liste et que l'objet n'est pas dans la range d'attaque du gameobject il avance vers le player qui est rentré.
-// {
-//     transform.position = Vector3.MoveTowards(transform.position, PlayerList[0].transform.position, Time.deltaTime); //on fais avancer le gameobject vers le player
-// }
-// if (PlayerList.Count == 0 && transform.position != originPosition) //? si il n'y à plus de joueur dans la liste, le gameObject retourne à son point de spawn, système pas opti ni finis
-// {
-//     transform.position = Vector3.MoveTowards(transform.position, originPosition, Time.deltaTime);
-// }
