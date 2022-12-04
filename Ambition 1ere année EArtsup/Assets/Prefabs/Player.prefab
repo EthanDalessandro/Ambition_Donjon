@@ -240,8 +240,8 @@ MonoBehaviour:
   damage: 10
   critChance: 50
   critDamage: 100
-  health: 500
-  player: {fileID: 851877269577129969}
+  health: 120
+  maxHealth: 120
   direction: {fileID: 851877268176908807}
   raycastJumpPosition: {fileID: 851877269568881323}
   body: {fileID: 851877269577129975}

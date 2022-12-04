@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public float critChance = 10;
     public float critDamage = 100f;
     public float health = 100f;
+    public float maxHealth;
     public Transform direction;
     public Transform raycastJumpPosition;
     public Rigidbody body;
@@ -26,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(health <= 0)
+        if (health <= 0)
         {
             // Debug.Log("YOU DIED LOOSER");
         }
@@ -100,12 +101,14 @@ public class PlayerController : MonoBehaviour
                     mouse1_hitObject.transform.GetComponent<BasicEnemy_Controller>().health -= damageCalculatedCrit; //on vas retirer 10 de pv à l'objet qui comporte ce script
                     Instantiate(audioArray[1], Vector3.forward, Quaternion.identity);
                     // Debug.Log("Vous avez fait " + damageCalculatedCrit + " de dégâts, il reste " + mouse1_hitObject.transform.GetComponent<BasicEnemy_Controller>().health + " PV");
+                    mouse1_hitObject.transform.GetComponent<BasicEnemy_Controller>().UpdateHealth();
                 }
                 else // Sinon
                 {
                     mouse1_hitObject.transform.GetComponent<BasicEnemy_Controller>().health -= damage; //on vas retirer 10 de pv à l'objet qui comporte ce script
                     Instantiate(audioArray[0], Vector3.forward, Quaternion.identity);
                     // Debug.Log("Vous avez fait " + damage + " de dégâts, il reste " + mouse1_hitObject.transform.GetComponent<BasicEnemy_Controller>().health + " PV");
+                    mouse1_hitObject.transform.GetComponent<BasicEnemy_Controller>().UpdateHealth();
                 }
 
                 mouse1_hitObject.transform.GetComponent<Rigidbody>().AddForceAtPosition(mouse1_Ray.direction * knockBackForce, mouse1_hitObject.transform.position, ForceMode.Impulse); //On pousse le gameObject toucher
@@ -118,12 +121,12 @@ public class PlayerController : MonoBehaviour
         RaycastHit leftClickHitObject;
         Ray ray = new Ray(direction.position, direction.forward);
 
-        if(Physics.Raycast(ray, out leftClickHitObject, attackRange))
+        if (Physics.Raycast(ray, out leftClickHitObject, attackRange))
         {
             ChestManager chestManager = leftClickHitObject.transform.GetComponent<ChestManager>();
-            if(chestManager)
+            if (chestManager)
             {
-                if(chestManager.isOpen == false)
+                if (chestManager.isOpen == false)
                 {
                     chestManager.OpenChest();
                     print("Vous avez trouvé un coffre !!");
