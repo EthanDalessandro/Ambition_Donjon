@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
-using DG.Tweening;
 
 public class BasicEnemy_Controller : MonoBehaviour
 {

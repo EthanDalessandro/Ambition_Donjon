@@ -4298,9 +4298,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760907b292c084642ba39d2d8743f84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredScore: 4
-  transitionDelay: 3
+  requiredScore: 1
+  transitionDelay: 2
   _scoreManager: {fileID: 0}
+  easeMode: 1
+  transitionDirection: {x: 0, y: -10, z: 0}
 --- !u!1 &8868436710518495450
 GameObject:
   m_ObjectHideFlags: 0
