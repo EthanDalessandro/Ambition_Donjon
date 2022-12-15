@@ -7,7 +7,7 @@ public class ChestManager : MonoBehaviour
     public ScoreManager _scoreManager;
     public bool isOpen = false;
     public AudioSource audioChest;
-    public OpeningDoor openDoor;
+    public OpeningDoor[] openDoor;
 
     public void OpenChest()
     {
@@ -15,6 +15,9 @@ public class ChestManager : MonoBehaviour
         audioChest.Play();
         Destroy(gameObject, delayDestroy);
         _scoreManager._score += chestScore;
-        openDoor.OpenDoor();
+        for (int i = 0; i < openDoor.Length; i++)
+        {
+            openDoor[i].OpenDoor();
+        }
     }
 }

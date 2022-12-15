@@ -16,8 +16,6 @@ public class OpeningDoor : MonoBehaviour
         {
             transform.DOMove(transform.position + transitionDirection, transitionDelay) //Pour donner une direction on doit prendre la position actuelle et ajouter à celle-ci un vecteur pour pas qu'il cherche à reach la position dans le monde
                 .SetEase(easeMode);
-
-            Destroy(gameObject, 5f);
         }
     }
 }
