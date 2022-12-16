@@ -3338,7 +3338,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 256
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 11.025448
   MaxDistance: 500
@@ -11402,7 +11402,7 @@ PrefabInstance:
       objectReference: {fileID: 752628761}
     - target: {fileID: 2731671506808255748, guid: 5deaf69feff91a04f943adb893e0bccd, type: 3}
       propertyPath: m_VersionIndex
-      value: 14703
+      value: 14706
       objectReference: {fileID: 0}
     - target: {fileID: 3972449847814501700, guid: 5deaf69feff91a04f943adb893e0bccd, type: 3}
       propertyPath: m_RootOrder
@@ -12079,6 +12079,99 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3726740952248020482, guid: 5fbfbee0f9885764383291c4c5e18668, type: 3}
   m_PrefabInstance: {fileID: 948580351}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &988941174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 988941175}
+  - component: {fileID: 988941178}
+  - component: {fileID: 988941177}
+  - component: {fileID: 988941179}
+  m_Layer: 5
+  m_Name: Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &988941175
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988941174}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1013991049}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 200, y: 650}
+  m_SizeDelta: {x: 400, y: 80}
+  m_Pivot: {x: 0.5, y: 0.49999988}
+--- !u!114 &988941177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988941174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 59
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 77
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'SCORE : 0'
+--- !u!222 &988941178
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988941174}
+  m_CullTransparentMesh: 1
+--- !u!114 &988941179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988941174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 039d1dc0f528e3644a080011be2a53f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1006634478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14885,7 +14978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredScore: 10
   transitionDelay: 4
-  _scoreManager: {fileID: 1780414546}
+  scoreManager: {fileID: 0}
   easeMode: 1
   transitionDirection: {x: 0, y: -9.9, z: 0}
 --- !u!1 &1013991045
@@ -14982,6 +15075,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 426991980}
+  - {fileID: 988941175}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15016,7 +15110,7 @@ PrefabInstance:
       objectReference: {fileID: 1090655041}
     - target: {fileID: 2731671506808255748, guid: 5deaf69feff91a04f943adb893e0bccd, type: 3}
       propertyPath: m_VersionIndex
-      value: 14703
+      value: 14706
       objectReference: {fileID: 0}
     - target: {fileID: 3972449847814501700, guid: 5deaf69feff91a04f943adb893e0bccd, type: 3}
       propertyPath: m_RootOrder
@@ -16187,7 +16281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredScore: 10
   transitionDelay: 2
-  _scoreManager: {fileID: 1780414546}
+  scoreManager: {fileID: 0}
   easeMode: 23
   transitionDirection: {x: 7, y: 0, z: 0}
 --- !u!1001 &1102736230
@@ -21085,7 +21179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e43fa9b05e02546baa799a5e777c14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _score: 10
+  score: 0
 --- !u!1001 &1794384662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26807,10 +26901,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 851877269229456978, guid: 20a38598ea760e94a8e3da9ee809e701, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 851877269577129969, guid: 20a38598ea760e94a8e3da9ee809e701, type: 3}
       propertyPath: m_Name
       value: Player
@@ -26860,16 +26950,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 851877269577129974, guid: 20a38598ea760e94a8e3da9ee809e701, type: 3}
-      propertyPath: speed
-      value: 10
+      propertyPath: lookSpeed
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 851877269577129974, guid: 20a38598ea760e94a8e3da9ee809e701, type: 3}
-      propertyPath: health
-      value: 250
+    - target: {fileID: 1251110822537428955, guid: 20a38598ea760e94a8e3da9ee809e701, type: 3}
+      propertyPath: m_SlopeLimit
+      value: 60
       objectReference: {fileID: 0}
-    - target: {fileID: 851877269577129974, guid: 20a38598ea760e94a8e3da9ee809e701, type: 3}
-      propertyPath: maxHealth
-      value: 250
+    - target: {fileID: 1251110822537428955, guid: 20a38598ea760e94a8e3da9ee809e701, type: 3}
+      propertyPath: m_StepOffset
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -27090,7 +27180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestScore: 1
-  _scoreManager: {fileID: 1780414546}
+  scoreManager: {fileID: 0}
   isOpen: 0
   audioChest: {fileID: 1849721857048479656}
   openDoor:
@@ -27300,7 +27390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestScore: 1
-  _scoreManager: {fileID: 1780414546}
+  scoreManager: {fileID: 0}
   isOpen: 0
   audioChest: {fileID: 1849721857531648419}
   openDoor:
@@ -27414,7 +27504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestScore: 1
-  _scoreManager: {fileID: 1780414546}
+  scoreManager: {fileID: 0}
   isOpen: 0
   audioChest: {fileID: 1849721858774565073}
   openDoor:
@@ -27524,7 +27614,7 @@ PrefabInstance:
       objectReference: {fileID: 1916646674}
     - target: {fileID: 2731671506808255748, guid: 5deaf69feff91a04f943adb893e0bccd, type: 3}
       propertyPath: m_VersionIndex
-      value: 14703
+      value: 14706
       objectReference: {fileID: 0}
     - target: {fileID: 3972449847814501700, guid: 5deaf69feff91a04f943adb893e0bccd, type: 3}
       propertyPath: m_RootOrder
@@ -28917,7 +29007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestScore: 1
-  _scoreManager: {fileID: 1780414546}
+  scoreManager: {fileID: 0}
   isOpen: 0
   audioChest: {fileID: 1702939066582728406}
   openDoor:

@@ -97,3 +97,4 @@ public class BasicEnemy_Controller : MonoBehaviour
         mainSlider.value = health / maxHealth;
     }
 }
+//? J'ai pas dépassé les 100 lignes :)
